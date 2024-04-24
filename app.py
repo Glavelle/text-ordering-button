@@ -173,15 +173,17 @@ def ordering_algorithm(Sentences):
     return z_order_sort
 
 def main():
-    st.title('File Upload for Processing')
+    st.title('Sentence Sorter - Sort Sentences by their Meaning')
+    st.markdown('Please insert a .txt file where each sentence or line of text is seperated by a newline character.')
 
     uploaded_file = st.file_uploader("Choose a file", type=['txt'])
     if uploaded_file is not None:
+        st.write('Ordering...')
         content = uploaded_file.getvalue().decode("utf-8")
         sentences = content.split('\n')
         result_df = ordering_algorithm(sentences)
         ordered_sentences = result_df['Sentences'].tolist()
-        st.write("Processed Output:")
+        st.write("Ordered Sentences:")
         for sentence in ordered_sentences:
             st.write(sentence)
 
