@@ -23,8 +23,11 @@ import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
 
+from transformers import AutoTokenizer
+
 import os
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 
 
 
