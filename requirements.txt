@@ -14,3 +14,4 @@ datashader
 bokeh
 holoviews
 scikit-learn
+dask-expr
