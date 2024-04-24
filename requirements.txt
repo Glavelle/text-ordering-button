@@ -6,3 +6,4 @@ scipy
 umap-learn
 sentence-transformers
 hilbertcurve
+zCurve
