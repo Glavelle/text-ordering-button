@@ -131,7 +131,7 @@ def encode_sentences_and_reduce_to_3d(df,sent_column='Sentences', nn=15):
     sentence_embeddings = model.encode(sentences, show_progress_bar=False)
 
 
-    reducer = mp.UMAP(n_neighbors=nn, n_components=3, metric='cosine')
+    reducer = mp.UMAP(n_neighbors=nn, n_components=3, metric='cosine', random_state=42)
 
     #Reduce the dimensionality of the sentence embeddings to 3D
     embedding_3d = reducer.fit_transform(sentence_embeddings)
